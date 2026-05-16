@@ -46,18 +46,18 @@ Tumor-infiltrating B cells play emerging roles in anti-tumor immunity, yet their
 - Kaplan-Meier and Cox survival analysis on B cell infiltration fractions
 
 ## Results
-# Cohort 
+### Cohort 
 390 TCGA-STAD patients with matched bulk RNA-seq and clinical data were included in this survival analysis. In this cohort, there were 161 death events (41% event rate). In total, patients were stratified by median overall survival time of 424 days(~ 1 day and 2 months). This is an unfortuate outcome for this type of cancer and this analysis aims to assess whether there are signatures in B cells that can be used to asssess survival outcomes in stomach adeocarcinsoma patients. 
 
-# Signature Analysis 
+### Signature Analysis 
 B cell transcriptional signatures were derived from differentially expresssed genes (DEG) identified in the GSE163558 scRNA-seq analysis (see bcell_gastric_tme):
     * **Memory B cell signature:** 301 upregulated genes (~84% of total DEG genes) in primary tumor vs. healthy memory B cells (avg_log2FC > 0.5, p_val_adj_global < 0.05) (total DEG = 367)
     * **Plasma cell signature:** 531 downregulated genes (~91% of total DEG genes) in primary tumor vs. healthy plasma cells (avg_log2FC > 0.5, p_val_adj_global < 0.05) (total DEG = 581)
 
-## ssGEA Scoring 
+### ssGEA Scoring 
 Single-sample GSEA (ssGSEA) was applied to VST-normalized bulk RNA-seq expression data to score each patient on memory B cell and plasma cell transcriptional activity. Patients were stratified into high and low groups by median signature score.
 
-## Survival Analysis
+### Survival Analysis
 Kaplan-Meier survival curves and Cox proportional hazards models were used to assess association between signature scores and overall survival.
 
 | Analysis | Memory B Cell | Plasma Cell |
@@ -70,7 +70,7 @@ Neither memory B cell nor plasma cell transcriptional signatures significantly a
 
 **Note:** The non-sig result is consistnet with known limitations of applying sc-derived transcriptional signatures to bulk RNA-seq data, where immune cell signals are diluted by the dominant epithelial and stromal compartments. hese findings motivate immune cell fraction estimation via CIBERSORTx deconvolution (Notebook 04, in progress), which isolates B cell-specific signals prior to survival analysis.
 
-## Requirements
+### Requirements
 
 ```r
 # CRAN
@@ -80,5 +80,5 @@ install.packages(c("tidyverse", "data.table", "survival",  "survminer", "httr", 
 BiocManager::install(c("DESeq2", "GSVA", "BiocParallel"))
 ```
 
-## Related Projects
+### Related Projects
 - [bcell-gastric-tme](https://github.com/taimcnugget/bcell-gastric-tme)
