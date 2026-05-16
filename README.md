@@ -61,6 +61,7 @@ Single-sample GSEA (ssGSEA) was applied to VST-normalized bulk RNA-seq expressio
 Kaplan-Meier survival curves and Cox proportional hazards models were used to assess association between signature scores and overall survival.
 
 | Analysis | Memory B Cell | Plasma Cell |
+| --------- | ----------- | ------------ |
 | Kaplan-Meier (median split) | p = 0.24 | p = 0.33 |
 | Cox (continuous score) | p = 0.60 | p = 0.30 | 
 | Cox (combined model) | p = 0.60 | ----- | 
