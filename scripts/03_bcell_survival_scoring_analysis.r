@@ -10,7 +10,7 @@
 # Input:   05_bcell_DEG_significant.csv (taimcnugget/bcell-gastric-tme)
 #          02_b_cell_survival_vst_matrix.rds
 # Output:  03_b_cell_survival_scoring_analysis.rds
-#          03_b_cell_survival_tpm_ecotyper.txt
+#          03_b_cell_survival_tpm.txt
 #          figures/03_b_cell_memory_survival_plot.png
 #          figures/03_b_cell_plasma_survival_plot.png
 # Author:  Tailynn McCarty
@@ -199,7 +199,7 @@ colnames(tpm_filtered) <- sample_table$submitter_id[match(colnames(tpm_filtered)
 colnames(tpm_filtered) <- gsub("\\.", "-", colnames(tpm_filtered))
 
 write.table(tpm_filtered,
-            file.path(output_directory, "03_b_cell_survival_tpm_ecotyper.txt"),
+            file.path(output_directory, "03_b_cell_survival_tpm.txt"),
             sep = "\t",
             quote = FALSE, 
             col.names = NA
